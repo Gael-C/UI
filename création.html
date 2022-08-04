@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'une écriture</title>
+<link rel="stylesheet" href="création.css"></head>
+<body>
+
+<h1>Création d'une nouvelle écriture</h1>
+
+<form id="form" action="accueil.html">
+    <label for="label" style="">Label :</label>
+    <input type="text" name="label" id="label" style="">
+
+    <label for="type">Type :</label>
+    <select id="type" name="type">
+        <option value="Choix" >Merci de choisir</option>
+        <option value="C" >Crédit</option>
+        <option value="D" >Débit</option>
+    </select>
+
+    <label for="amount">amount :</label>
+    <input type="text" step="0.01" name="amount" id="amount">
+
+    <label for="date">Date :</label>
+    <input type="text" name="date" id="date">
+
+    <input class="submit"  type="submit" value="Enregistrer">
+</form>
+<form class="form2" action="accueil.html">
+    <input class="submit" type="submit" value="Annuler">
+</form>
+
+<script>
+
+        const requestURL = 'https://127.0.0.1:8000/api/comptes/e90b7413-77da-406a-ac0c-d20dc46db5e2/ecritures';
+
+        const form = document.getElementById('form');
+
+        form.addEventListener('submit',function (e) {
+            e.preventDefault();
+            const payload = new FormData(form);
+
+            console.log([...payload]);
+
+            const plainFormData = Object.fromEntries(payload.entries());
+            const formDataJsonString = JSON.stringify(plainFormData);
+
+            const fetchOptions = {
+                method: "POST",
+                body: formDataJsonString,
+            };
+
+          fetch(requestURL,fetchOptions)
+              .then(res => console.log(res))
+              .catch(err => console.log(err))
+        });
+
+</script>
+</body>
+</html>
