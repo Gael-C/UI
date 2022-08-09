@@ -1,8 +1,9 @@
 let searchParam = new URLSearchParams(window.location.search);
 
 let c_uuid = searchParam.get('c_uuid');
-//  e90b7413-77da-406a-ac0c-d20dc46db5e2
 let body = document.querySelector("table")
+
+
 let requestURL = 'https://127.0.0.1:8000/api/comptes/'+c_uuid+'/ecritures';
 
 
@@ -14,8 +15,9 @@ window.onload = function() {
             let tbody = document.createElement('tbody');
 
             for (let i = 0; i < data.items.length; i++) {
+
                 let ecritures = data.items[i]
-                pbody(ecritures);
+                    pbody(ecritures);
 
                 function pbody(jsonObj){
                     let row = document.createElement('tr');
@@ -63,9 +65,6 @@ window.onload = function() {
 
                         }
 
-
-
-
                     for (let j = 0; j < 6;j++){
                         row.appendChild(td1);
                         row.appendChild(td2);
@@ -80,8 +79,8 @@ window.onload = function() {
                         tbody.appendChild(row)
                     }
                     body.appendChild(tbody);
-                    document.getElementById('table').appendChild(tbody);
 
                 }
             }
-        })}
+        })
+}

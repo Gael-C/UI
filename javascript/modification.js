@@ -8,6 +8,8 @@ console.log(uuid)
 
 const requestURL = 'https://127.0.0.1:8000/api/comptes/'+c_uuid+'/ecritures/'+uuid;
 
+const body = document.querySelector("body")
+
 fetch(requestURL)
     .then(response =>response.json())
     .then(data =>{
@@ -122,12 +124,23 @@ fetch(requestURL)
             let submit = document.createElement("input");
             submit.setAttribute('type','submit')
 
+            submit.style.margin='20px auto';
             submit.innerText = 'Modifier';
+
 
             form.appendChild(submit);
 
-
         }});
+
+    let submit2 = document.createElement("button");
+
+    submit2.style.display = 'block';
+    submit2.style.margin='10px auto';
+    submit2.innerText = 'Annuler';
+    submit2.onclick = function (){
+        window.location.href="ecritures.html?c_uuid="+c_uuid
+    }
+    body.appendChild(submit2);
 
 form.addEventListener('submit',function (e) {
     e.preventDefault();
@@ -149,6 +162,6 @@ form.addEventListener('submit',function (e) {
         .then(res => console.log(res))
         .catch(err => console.log(err))
 
-    window.location.href ='accueil.html?c_uuid='+c_uuid
+    window.location.href ='ecritures.html?c_uuid='+c_uuid
     window.alert('Modification éffectuée')
 });

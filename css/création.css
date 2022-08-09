@@ -12,14 +12,6 @@ h1{
     justify-content: center
 }
 
-.form2{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin-left: 35%;
-    margin-right: 35%;
-    justify-content: center
-}
 
 label{
     margin-top: 10px
@@ -33,9 +25,8 @@ option{
     text-align: center
 }
 
-.submit{
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    max-width: max-content
+.img{
+    width: 25%;
+    display: block;
+    margin: auto
 }
