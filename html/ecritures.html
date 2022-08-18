@@ -17,9 +17,13 @@
         padding: 10px;
     }
 </style>
+
+<header>
+    <a href="accueil.html"></a>
+</header>
 <body>
 
-<p style="text-align: center">Écritures présentes dans le compte : </p>
+<h1 style="text-align: center">Écritures présentes dans le compte : </h1>
 
 <table id="table" >
     <thead>
@@ -35,7 +39,8 @@
 </table>
 
 <button onclick="window.location.href='création.html?c_uuid='+c_uuid;" style="display:block;margin: 10px auto">Nouveau</button>
+<button onclick="window.location.href='accueil.html'" style="display:block;margin: 20px auto">Retour</button>
 
 </body>
-<script src="javascript/accueil.js"></script>
+<script src="../javascript/ecritures.js"></script>
 </html>
