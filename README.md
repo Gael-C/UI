@@ -2,6 +2,8 @@
 
 Ce repository a pour but de consommer l'API [Test MC](https://github.com/Gael-C/Test_Mc).
 
+**Penser à modifier les constantes d'URL dans les fichiers js pour vos serveurs.**
+
 Grâce à cette interface smple réalisé en HTML et Javascript, on peut :  
 
 	- Voir la liste de tous les comptes et login  
